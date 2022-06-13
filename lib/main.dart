@@ -1,7 +1,11 @@
+import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:openuzbekistan/config/init/navigation/navigator.dart';
+import 'package:openuzbekistan/config/routes/page_routes.dart';
+import 'package:openuzbekistan/config/themes/main_theme.dart';
+import 'package:openuzbekistan/screens/home/cubit/home_cubit.dart';
 
-void main() {
+void main() async {
   runApp(const MyApp());
 }
 
@@ -12,10 +16,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Open Uzbekistan',
-      theme: ThemeData(
-      ),
+      theme: MainTheme.apptheme,
       navigatorKey: NavigationService.instance.navigatorKey,
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      initialRoute: '/homeview',
+      onGenerateRoute: MyRoute.instance.onGenerateRoute,
     );
   }
 }

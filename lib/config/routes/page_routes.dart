@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:openuzbekistan/screens/home/view/home_view.dart';
 
 class MyRoute {
   static final MyRoute _instance = MyRoute._init();
@@ -9,7 +10,7 @@ class MyRoute {
     var args = settings.arguments;
     switch (settings.name) {
       case '/homeview':
-        return _pages();
+        return _pages(HomeView());
     }
   }
 
