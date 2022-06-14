@@ -5,7 +5,7 @@ import 'package:openuzbekistan/config/routes/page_routes.dart';
 import 'package:openuzbekistan/config/themes/main_theme.dart';
 import 'package:openuzbekistan/screens/home/cubit/home_cubit.dart';
 
-void main() async {
+void main() {
   runApp(const MyApp());
 }
 
@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Open Uzbekistan',
       theme: MainTheme.apptheme,
       navigatorKey: NavigationService.instance.navigatorKey,
