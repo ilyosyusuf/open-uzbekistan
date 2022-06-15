@@ -4,5 +4,5 @@ import 'package:openuzbekistan/core/constants/colors/color_const.dart';
 class MainTheme {
   static ThemeData get apptheme => ThemeData(
       colorScheme: ColorScheme.light(
-          primary: ColorConst.kPrimaryColor, brightness: Brightness.light));
+          primary: ColorConst.blackfortext, brightness: Brightness.light));
 }
