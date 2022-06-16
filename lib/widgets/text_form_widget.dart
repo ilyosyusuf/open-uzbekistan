@@ -14,6 +14,7 @@ class MyTextField {
     FormFieldValidator<String>? validator,
     bool isShown = false,
     List<TextInputFormatter>? inputFormatters,
+    int? maxLines,
   }) {
     return TextFormField(
         controller: controller,
@@ -22,7 +23,9 @@ class MyTextField {
         onTap: onTap,
         obscureText: isShown,
         inputFormatters: inputFormatters,
+        maxLines: maxLines,
         decoration: InputDecoration(
+          
           hintText: text,
           hintStyle: const TextStyle(color: Colors.grey),
           suffixIcon: iconButton,

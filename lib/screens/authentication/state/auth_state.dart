@@ -19,6 +19,10 @@ class SignInState extends AuthState{
   SignInState();
 }
 
+class ProfileState extends AuthState{
+  ProfileState();
+}
+
 class AuthComplete extends AuthState{
   AuthComplete();
 }

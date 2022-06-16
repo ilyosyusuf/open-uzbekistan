@@ -43,7 +43,7 @@ class DetailsView extends StatelessWidget {
                       child: ClipRRect(
                         child: Container(
                           child: Image.network(
-                            'uploads/chimgan_4b0fad4bf8.jpg'
+                            'http://192.168.163.2:1337/uploads/chimgan_4b0fad4bf8.jpg'
                               // '${data['data'][i]['attributes']['picture']['data'][0]['attributes']['url']}',
                               ),
                         ),

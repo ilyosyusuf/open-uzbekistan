@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       title: 'Open Uzbekistan',
       theme: MainTheme.apptheme,
       navigatorKey: NavigationService.instance.navigatorKey,
-      initialRoute: '/signup',
+      initialRoute: '/mainsign',
       // initialRoute: GetStorageService.instance.box.read("token") != null && JwtDecoder.isExpired(GetStorageService.instance.box.read("token")) != true ? '/homeview': '/signup',
       onGenerateRoute: MyRoute.instance.onGenerateRoute,
     );

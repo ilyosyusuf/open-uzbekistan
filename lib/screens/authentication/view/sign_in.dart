@@ -6,7 +6,7 @@ import 'package:openuzbekistan/screens/authentication/state/auth_state.dart';
 import 'package:openuzbekistan/widgets/elevatedbutton_widget.dart';
 import 'package:openuzbekistan/widgets/text_form_widget.dart';
 
-class SignUpPage extends StatelessWidget {
+class SignInPage extends StatelessWidget {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   bool checkValue = false;
   bool isShown = true;
@@ -26,15 +26,11 @@ class SignUpPage extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(
-                  height: context.h * 0.25,
+                  height: context.h * 0.32,
                 ),
                 Form(
                   child: Column(
                     children: [
-                      MyTextField.textField(
-                          text: "Enter Username",
-                          controller: data.nameController,
-                          prefixIcon: Icon(Icons.phone)),
                       const SizedBox(
                         height: 30.0,
                       ),
@@ -60,9 +56,12 @@ class SignUpPage extends StatelessWidget {
                 ),
                 ButtonWidgets(
                     height: context.h * 0.07,
-                    child: Text("Sign Up"),
+                    child: Text("Sign In"),
                     onPressed: () {
-                      context.read<AuthCubit>().changeState(ProfileState());
+                      context.read<AuthCubit>().signIn(
+                          context,
+                          data.emailController.text,
+                          data.passwordController.text);
                     }),
                 const SizedBox(height: 65),
               ],
@@ -70,21 +69,24 @@ class SignUpPage extends StatelessWidget {
           ),
           Spacer(),
           Container(
-              child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text(
-                "Allready have an account?",
-                style: TextStyle(color: Colors.grey),
-              ),
-              TextButton(
-                onPressed: () {
-                  context.read<AuthCubit>().changeState(SignInState());
-                },
-                child: Text("Sign In"),
-              ),
-            ],
-          ))
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
+                  "Don't exist an account?",
+                  style: TextStyle(color: Colors.grey),
+                ),
+                TextButton(
+                    onPressed: () {
+                      // NavigationService.instance.pushNamedAndRemoveUntil('/signup')
+                      context.read<AuthCubit>().changeState(SignUpState());
+                      // Navigator.pushNamedAndRemoveUntil(
+                      //     context, '/signup', (route) => false);
+                    },
+                    child: Text("Register"))
+              ],
+            ),
+          ),
         ],
       ),
     );

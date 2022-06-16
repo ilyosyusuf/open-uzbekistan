@@ -13,7 +13,7 @@ class HomeCubit extends Cubit<HomeState> {
   Future getData() async {
     try {
       Response res = await Dio()
-          .get("http://192.168.2.193:1337/api/${categories[0]}?populate=*");
+          .get("http://192.168.163.2:1337/api/${categories[0]}?populate=*");
       if (res.statusCode == HttpStatus.ok) {
         print(res.data['data'][1]['attributes']['picture']['data'][0]['attributes']['url']);
         dataList.add(res.data);
